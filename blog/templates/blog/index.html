@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_files %}
+  <link rel="stylesheet" href="{% static 'blog/post.css' %}"/>
+  <link rel="stylesheet" href="{% static 'blog/index.css' %}"/>
+{% endblock %}
+
+{% block title %}
+  Start Page
+{% endblock %}
+
+{% block content %}
+
+
+<section>
+    <header id="welcome">
+        <img src="{% static 'blog/images/pdp.jpg' %}" alt="Mbola Fy - the Author of This Blog">
+        <h2>ANDRIATSIKETRAKARIVONINDRIAKA Mbola Fy</h2>
+        <p>Hi, I am Mbola Fy and I love to blog about tech and the world!</p>
+    </header>
+</section>
+
+<section id="latest-posts">
+    <h2>My Latest Thoughts</h2>
+    <ul>
+        
+        {% for post in posts %}
+            {% include 'blog/includes/post.html' %}
+        {% endfor %}
+    </ul>
+</section>
+
+<section id="about">
+    <h2>What I Do ?</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis ratione perspiciatis beatae at, distinctio excepturi et recusandae obcaecati iure repellendus, commodi repudiandae necessitatibus odit perferendis harum illo exercitationem? Temporibus, ad.</p>
+    <p>My goal is to keep on growing as a developer - and if I could help you the same, I'd be every</p>
+</section>
+{% endblock %}
